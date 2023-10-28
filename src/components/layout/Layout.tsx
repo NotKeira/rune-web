@@ -302,23 +302,23 @@ export default function Layout(props: { Name: string, Route: string, children: R
                 {element}
 
                 {/* Main Content */}
-                <div className="flex-1 p-4">
+                <div className="flex flex-col flex-1 p-4">
                     {/* Top Bar */}
-                    <div className="bg-gray-800 p-2">
-                        <div className="flex justify-center items-center">
+                    <div className="bg-gray-800 p-2 rounded-lg">
+                        <div className="flex justify-between items-center p-2">
                             <div className="flex items-center space-x-2 text-white">
                                 <div className="font-semibold text-xl">
                                     <a href={"/"}>Rune</a> / <a href={route}>{name}</a>
                                 </div>
                             </div>
-                            <div className="space-x-2">
+                            <div className="flex flex-row gap-2">
                                 <Tippy content="Open the Shard Status Page"
                                        followCursor={"horizontal"}
                                        placement={"bottom"}
                                 >
                                     <Link
                                         href="/status"
-                                        className="px-4 py-2 bg-gray-600 rounded-lg text-white hover:bg-gray-700 focus:outline-none"
+                                        className="grow px-4 py-2 bg-gray-600 rounded-lg text-white hover:bg-gray-700 focus:outline-none"
                                     >
                                         Status
                                     </Link>
@@ -343,7 +343,7 @@ export default function Layout(props: { Name: string, Route: string, children: R
                     </div>
 
                     {/* Page Content */}
-                    <div className="bg-gray-800 p-4 rounded-lg mt-4">{props.children}</div>
+                    <div className="bg-gray-800 p-4 rounded-lg mt-4 grow">{props.children}</div>
                 </div>
             </div>)
         } else {
